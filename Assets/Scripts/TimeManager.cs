@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class TimeManager : MonoBehaviour
@@ -8,6 +9,7 @@ public class TimeManager : MonoBehaviour
 
     public Sprite PauseSprite;
     public Sprite StartSprite;
+
 
     public float CurrentTimeValue
     {
@@ -21,8 +23,13 @@ public class TimeManager : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        CurrentTimeValue = 0.05f;
+    }
+
     public void Pause()
     {
-        CurrentTimeValue = CurrentTimeValue == 0f ? 0.5f : 0f;
+        CurrentTimeValue = CurrentTimeValue == 0f ? 0.05f : 0f;
     }
 }
